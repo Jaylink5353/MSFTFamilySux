@@ -1,0 +1,108 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.ServiceProcess;
+using System.Management; // Add this at the top
+
+namespace ParentalControlsUtils
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //TempDisable
+            string serviceName = "WpcMonSvc";
+            using (ServiceController service = new ServiceController(serviceName))
+            {
+                // Check if the service is running
+                if (service.Status == ServiceControllerStatus.Running)
+                {
+                    // Stop the service
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
+                    MessageBox.Show("Sucessfully Disabled!");
+                }
+                else
+                {
+                    MessageBox.Show("Service Not Running!");
+                }
+            }
+            
+        }
+
+        private void Button_ClickP(object sender, RoutedEventArgs e)
+        {
+            // Change the service startup type to Disabled
+            string serviceName = "WpcMonSvc";
+            try
+            {
+                using (ManagementObject service = new ManagementObject($"Win32_Service.Name='{serviceName}'"))
+                {
+                    // 4 = Disabled, 3 = Manual, 2 = Automatic
+                    ManagementBaseObject inParams = service.GetMethodParameters("ChangeStartMode");
+                    inParams["StartMode"] = "Disabled";
+                    service.InvokeMethod("ChangeStartMode", inParams, null);
+                    MessageBox.Show("Service startup type set to Disabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to change startup type: {ex.Message}");
+            }
+        }
+
+        private void Button_ClickR(object sender, RoutedEventArgs e)
+        {
+            string serviceName = "WpcMonSvc";
+
+            try
+            {
+                using (ManagementObject service = new ManagementObject($"Win32_Service.Name='{serviceName}'"))
+                {
+                    // 4 = Disabled, 3 = Manual, 2 = Automatic
+                    ManagementBaseObject inParams = service.GetMethodParameters("ChangeStartMode");
+                    inParams["StartMode"] = "Manual";
+                    service.InvokeMethod("ChangeStartMode", inParams, null);
+                    MessageBox.Show("Service startup type set to Manual (Default).");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to change startup type: {ex.Message}");
+            }
+
+            using (ServiceController service = new ServiceController(serviceName))
+            {
+                // Check if the service is running
+                if (service.Status == ServiceControllerStatus.Stopped)
+                {
+                    // Stop the service
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
+                    MessageBox.Show("Sucessfully Enabled!");
+                }
+            }
+        }
+
+    }
+}
