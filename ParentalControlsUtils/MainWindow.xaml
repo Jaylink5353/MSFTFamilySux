@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="ByeByeParentalControl" Height="350" Width="450"
         ResizeMode="CanMinimize">
-    <Grid>
-        <Button Content="Tempoararily Disable" HorizontalAlignment="Left" Margin="43,82,0,0" VerticalAlignment="Top" Height="43" Width="131" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="49" Margin="225,85,0,0" TextWrapping="Wrap" Text="Stops the Parental Controls Service. Disables until Restart. Works Immedietly" VerticalAlignment="Top" Width="215"/>
-        <Button Content="Re-Enable" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Center" Height="43" Width="131" Click="Button_ClickR"/>
-        <TextBlock HorizontalAlignment="Left" Height="40" Margin="225,149,0,0" TextWrapping="Wrap" Text="Starts the Parental Controls Service and allows it to run at startup. &quot;Full Reset&quot;. " VerticalAlignment="Top" Width="215"/>
-        <Button Content="Permanent Disable" HorizontalAlignment="Left" Margin="43,208,0,0" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickP"/>
-        <TextBlock HorizontalAlignment="Left" Height="40" Margin="225,210,0,0" TextWrapping="Wrap" Text="Prevents Service from Starting upon boot. Restart Required." VerticalAlignment="Top" Width="169"/>
-        <TextBlock HorizontalAlignment="Left" Height="15" Margin="22,309,0,0" TextWrapping="Wrap" Text="Made with ♥️ by Jaylink5353" VerticalAlignment="Top" Width="152"/>
-        <TextBlock HorizontalAlignment="Left" Height="43" Margin="108,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"><Run Text="Ultimate Microsoft Family Safety Disabler!"/><LineBreak/><Run Text="Regain "/><Run FontWeight="Bold" Text="YOUR"/><Run Text=" Control that You Deserve!"/></TextBlock>
-
+    <Grid Margin="0,0,0,41">
+        <Canvas>
+            <Button Content="Tempoararily Disable" HorizontalAlignment="Left" Margin="43,82,0,0" VerticalAlignment="Top" Height="43" Width="131" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Left" Height="49" Margin="225,85,0,0" TextWrapping="Wrap" Text="Stops the Parental Controls Service. Disables until Restart. Works Immedietly" VerticalAlignment="Top" Width="215"/>
+            <Button Content="Re-Enable" HorizontalAlignment="Left" Margin="43,143,0,0" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickR"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="225,149,0,0" TextWrapping="Wrap" Text="Starts the Parental Controls Service and allows it to run at startup. &quot;Full Reset&quot;. " VerticalAlignment="Top" Width="215"/>
+            <Button Content="Permanent Disable" HorizontalAlignment="Left" Margin="43,208,0,0" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickP"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="225,210,0,0" TextWrapping="Wrap" Text="Prevents Service from Starting upon boot. Restart Required." VerticalAlignment="Top" Width="169"/>
+            <TextBlock HorizontalAlignment="Left" Height="15" Margin="22,269,0,0" TextWrapping="Wrap" Text="Made with ♥️ by Jaylink5353" VerticalAlignment="Top" Width="152"/>
+            <TextBlock HorizontalAlignment="Left" Height="43" Margin="108,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"><Run Text="Ultimate Microsoft Family Safety Disabler!"/><LineBreak/><Run Text="Regain "/><Run FontWeight="Bold" Text="YOUR"/><Run Text=" Control that You Deserve!"/></TextBlock>
+        </Canvas>
     </Grid>
 </Window>
