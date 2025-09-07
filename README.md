@@ -5,7 +5,7 @@ You should be able to have control of your PC, so I made this GUI tool written i
 
 GUI is self-explanatory...
 
-Go to the [Releases Tab](https://github.com/Jaylink5353/skills-communicate-using-markdown/releases) to get a prebuilt exe.
+Go to the [Releases Tab](https://github.com/Jaylink5353/MSFTFamilySux/releases/latest) to get a prebuilt exe.
 
 REQUIRES Admin Privileges!!
 
