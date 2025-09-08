@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ServiceProcess;
 using System.Management; // Add this at the top
+using System.Security.Principal;
+using System.Diagnostics;
 
 namespace ParentalControlsUtils
 {
@@ -25,8 +27,8 @@ namespace ParentalControlsUtils
         public MainWindow()
         {
             InitializeComponent();
+            EnsureAdmin();
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -144,6 +146,41 @@ namespace ParentalControlsUtils
                     service.Start();
                     service.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
                     MessageBox.Show("Sucessfully Enabled!");
+                }
+            }
+        }
+
+        private bool IsRunningAsAdmin()
+        {
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
+
+        private void EnsureAdmin()
+        {
+            if (!IsRunningAsAdmin())
+            {
+                try
+                {
+                    // Path to your GainAdmin.exe (adjust as needed)
+                    string gainAdminPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GainAdmin.exe");
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = gainAdminPath,
+                        UseShellExecute = true
+                        // Do NOT set Verb = "runas"
+                    };
+                    Process.Start(psi);
+                    MessageBox.Show("Please run this tool as administrator. GainAdmin has been launched.");
+                    Application.Current.Shutdown(); // Close this app
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to launch GainAdmin: " + ex.Message);
+                    Application.Current.Shutdown();
                 }
             }
         }
