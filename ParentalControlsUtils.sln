@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParentalControlsUtils", "ParentalControlsUtils\ParentalControlsUtils.csproj", "{A079A094-A2AD-4343-9578-88404551BC4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GainAdmin", "GainAdmin\GainAdmin.csproj", "{9B24D513-8C35-448B-A88B-01CC4F048C2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A079A094-A2AD-4343-9578-88404551BC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A079A094-A2AD-4343-9578-88404551BC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A079A094-A2AD-4343-9578-88404551BC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B24D513-8C35-448B-A88B-01CC4F048C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B24D513-8C35-448B-A88B-01CC4F048C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B24D513-8C35-448B-A88B-01CC4F048C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B24D513-8C35-448B-A88B-01CC4F048C2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
