@@ -84,7 +84,7 @@ cd C:\Path\To\restoreOSK.bat
 ```
 .\restoreOSK.bat
 ```
-This script will clean up, and now, you should be able to use the other application to disable parental controls!
+This script will clean up, then close out of the command prompt and restart. And now, you should be able to use the other application to disable parental controls!
 
 **Congratulations, you have admin priveleges!!!**
 
