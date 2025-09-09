@@ -28,14 +28,24 @@ namespace GainAdmin
         }
         private void DisplayMarkdownFromUrl()
         {
-            using (WebClient client = new WebClient())
+            try
             {
-                string url = "URK HERE";
-                string markdown = client.DownloadString(url);
-                string html = Markdig.Markdown.ToHtml(markdown);
-                MarkdownBrowser.NavigateToString(html);
+                using (WebClient client = new WebClient())
+                {
+                    string url = "https://raw.githubusercontent.com/Jaylink5353/MSFTFamilySux/refs/heads/admingain/GainAdmin.md";
+                    string markdown = client.DownloadString(url);
+                    string html = Markdig.Markdown.ToHtml(markdown);
+                    MarkdownBrowser.NavigateToString(html);
+                }
+            }
+            catch (System.Net.WebException ex)
+            {
+                // Optionally log or display the error message
+                MessageBox.Show("Check your internet connection. Failed to load markdown: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
             }
         }
+
     }
 
 }

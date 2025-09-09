@@ -8,7 +8,7 @@ This will get you an admin command prompt from which you can make your user an a
 
 ### 1.A Getting to Windows RE
 Click Restart Into WinRE To restart into the Windows Recovery Enviornment. You will see a screen like this:
-//INSERT IMAGE HERE
+![WinRE Screen](https://github.com/Jaylink5353/MSFTFamilySux/blob/admingain/Assets/WinRE.png?raw=true)
 
 We will be using this to get an admin command prompt. Click Troubleshoot, then Advanced Options, then Command Prompt. It may restart your computer again, this is expected. You may encounter it needing a admin's password, if so, refer to this guide to make a dummy account: {NEXT GUIDE HERE}
 
@@ -54,6 +54,8 @@ Then, type `dir` and make sure "giveCMD.bat" is in the list. Now, lets start the
 ```
 Once the script completes, close out of CMD, and click "Continue". Now, when you get to the login screen, click the accessibility icon (image below), then On Screen Keyboard. If it worked correctly, you should have a command prompt! Now, move on to step 2.
 
+![Accesibility Icon](https://github.com/Jaylink5353/MSFTFamilySux/blob/admingain/Assets/AccesibilityIcon.png?raw=true)
+
 ## 2. Converting the User to an Admin
 Occasionally during this process, you may get errors saying `The system cannot find message .....`, this is fine just ignore it.
 
@@ -72,3 +74,18 @@ From the list, find your username, then copy it. Then, type
 Be sure there are quotes around the username. Once the script finishes, restart your computer. Proceed to step 3
 
 ## 3. Cleaning Up
+Once you log into your user account, you should be an administrator! Now, we need to do just a bit of cleaning up.
+
+Launch this program again, and hit restart. This will put your computer back into WinRE. Go back to the command prompt, and do the following:
+
+```
+cd C:\Path\To\restoreOSK.bat
+```
+```
+.\restoreOSK.bat
+```
+This script will clean up, and now, you should be able to use the other application to disable parental controls!
+
+**Congratulations, you have admin priveleges!!!**
+
+#### Made by Jaylink5353
