@@ -9,6 +9,8 @@ You will need:
 - Windows [10](https://www.microsoft.com/en-us/software-download/windows10)/[11](https://www.microsoft.com/en-us/software-download/windows11) ISO 
 -
 
+## Guide 2. Linux
+
 
 ## Guide 3. FreeDOS USB (WIP)
 You will need the following:
