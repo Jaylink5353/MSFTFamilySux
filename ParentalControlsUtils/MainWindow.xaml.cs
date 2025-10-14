@@ -26,7 +26,39 @@ namespace ParentalControlsUtils
         {
             InitializeComponent();
         }
-
+        
+        public bool IsServiceRunning()
+        {
+            string serviceName = "WpcMonSvc";
+            try
+            {
+                using (ServiceController service = new ServiceController(serviceName))
+                {
+                    if (service.Status == ServiceControllerStatus.Running)
+                    {
+                        Console.WriteLine($"Service '{serviceName}' is running.");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Service '{serviceName}' is NOT running. Status: {service.Status}");
+                        return false;
+                    }
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine($"Service '{serviceName}' not found.");
+                MessageBox.Show($"Service '{serviceName}' not found.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                MessageBox.Show($"An error has occured: {ex.Message}.");
+                return false;
+            }
+        }
         private void Button_ClickP(object sender, RoutedEventArgs e)
         {
             // Change the service startup type to Disabled
