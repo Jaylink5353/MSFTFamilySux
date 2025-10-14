@@ -27,45 +27,6 @@ namespace ParentalControlsUtils
             InitializeComponent();
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string serviceName = "WpcMonSvc";
-            using (ServiceController service = new ServiceController(serviceName))
-            {
-                if (service.Status == ServiceControllerStatus.Running)
-                {
-                    try
-                    {
-                        service.Stop();
-                        service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
-                        MessageBox.Show("Successfully Disabled!");
-                    }
-                    catch (System.ComponentModel.Win32Exception ex)
-                    {
-                        if (ex.Message.Contains("The pipe has been ended"))
-                        {
-                            // Optionally log or inform the user, but continue execution
-                            MessageBox.Show("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Service stop failed: {ex.Message}");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Service stop failed: {ex.Message}");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Service Not Running!");
-                }
-            }
-            
-        }
-
         private void Button_ClickP(object sender, RoutedEventArgs e)
         {
             // Change the service startup type to Disabled
