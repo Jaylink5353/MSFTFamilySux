@@ -9,15 +9,16 @@
         ResizeMode="CanMinimize">
     <Grid Margin="0,0,0,41">
         <Canvas>
-            <Button Content="Re-Enable" HorizontalAlignment="Center" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickR" Canvas.Left="43" Canvas.Top="115"/>
-            <TextBlock HorizontalAlignment="Center" Height="40" TextWrapping="Wrap" Text="Starts the Parental Controls Service and allows it to run at startup. &quot;Full Reset&quot;. " VerticalAlignment="Top" Width="215" Canvas.Left="225" Canvas.Top="120"/>
-            <Button Content="Permanent Disable" HorizontalAlignment="Center" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickP" Canvas.Left="43" Canvas.Top="175"/>
-            <TextBlock HorizontalAlignment="Center" Height="40" TextWrapping="Wrap" Text="Prevents Service from Starting upon boot. Restart Required." VerticalAlignment="Top" Width="169" Canvas.Left="225" Canvas.Top="181"/>
+            <Button Content="Enable" HorizontalAlignment="Center" VerticalAlignment="Top" Height="43" Width="131" Click="Button_ClickR" Canvas.Left="41.736" Canvas.Top="87.196"/>
+            <TextBlock HorizontalAlignment="Center" Height="40" TextWrapping="Wrap" Text="Starts the Parental Controls Service and allows it to run at startup. &quot;Full Reset&quot;. " VerticalAlignment="Top" Width="215" Canvas.Left="223.736" Canvas.Top="92.196"/>
+            <Button Content="Disable" HorizontalAlignment="Left" VerticalAlignment="Center" Height="43" Width="131" Click="Button_ClickP" Canvas.Left="41.736" Canvas.Top="143.404"/>
+            <TextBlock HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" Text="Prevents Service from Starting upon boot. Restart Required." VerticalAlignment="Center" Width="165" Canvas.Left="223.736" Canvas.Top="149.404"/>
             <TextBlock HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Made with ♥️ by Jaylink5353" VerticalAlignment="Top" Width="152" Canvas.Left="22" Canvas.Top="234"/>
             <TextBlock HorizontalAlignment="Center" Height="43" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Canvas.Left="108" Canvas.Top="6"><Run Text="Ultimate Microsoft Family Safety Disabler!"/><LineBreak/><Run Text="Regain "/><Run FontWeight="Bold" Text="YOUR"/><Run Text=" Control that You Deserve!"/></TextBlock>
-            <Rectangle Height="29" Canvas.Left="50" Stroke="Black" Canvas.Top="49" Width="340"/>
-            <TextBlock Height="26" Canvas.Left="71" TextWrapping="Wrap" Text="Service Status Here in 1.1 final release, + refresh button" Canvas.Top="52" Width="281"/>
-            <TextBlock Height="27" Canvas.Left="50" TextWrapping="Wrap" Canvas.Top="84" Width="353" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="9"><Run Text="If your organizer setup time limits, the &quot;15 Minutes Left&quot; and &quot;2 Minutes Left&quot; Messages may still appear. If the service is "/><Run Text="NOT"/><Run Text=" running, it "/><Run Text="should"/><Run Text=" not lock your PC."/></TextBlock>
+            <Rectangle Height="29" Canvas.Left="50" Stroke="Black" Canvas.Top="49" Width="306" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Height="27" Canvas.Left="48.5" TextWrapping="Wrap" Canvas.Top="198.356" Width="353" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="9"><Run Text="If your organizer setup time limits, the &quot;15 Minutes Left&quot; and &quot;2 Minutes Left&quot; Messages may still appear. If the service is "/><Run Text="NOT"/><Run Text=" running, it "/><Run Text="should"/><Run Text=" not lock your PC."/></TextBlock>
+            <TextBlock Height="16" Canvas.Left="57.564" TextWrapping="Wrap" Text="Service Status: xxxxxxxxx" Canvas.Top="55.5" Width="292" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" x:Name="servStat"/>
+            <Button Content="Reload" Canvas.Left="369.613" Canvas.Top="49" Height="29" Width="55" Click="Button_Click"/>
 
         </Canvas>
     </Grid>

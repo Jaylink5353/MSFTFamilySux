@@ -25,6 +25,7 @@ namespace ParentalControlsUtils
         public MainWindow()
         {
             InitializeComponent();
+            IsServiceRunning();
         }
         
         public bool IsServiceRunning()
@@ -141,5 +142,20 @@ namespace ParentalControlsUtils
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //RefreshButton
+            var runningStat = IsServiceRunning();
+            string text;
+            if (runningStat == true)
+            {
+                text = $"Family Safety Service Status: Running";
+            }
+            else
+            {
+                text = $"Family Safety Service Status: Not Running";
+            }
+            servStat.Text = text;
+        }
     }
 }
