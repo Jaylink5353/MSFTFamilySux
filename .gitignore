@@ -1,3 +1,13 @@
 ParentalControlsUtils/bin/
 ParentalControlsUtils/obj/
 .vs/
+ParentalControlsUtils/.vs/
+GainAdmin/obj/
+GainAdmin/bin/
+GainAdmin/.vs/
+*.user
+*.suo
+*.pdb
+*.exe
+*.dll
+
