@@ -46,7 +46,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Bookmark",
@@ -61,7 +61,8 @@
               "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml",
               "RelativeToolTip": "ParentalControlsUtils\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-06T22:31:27.477Z"
+              "WhenOpened": "2025-09-06T22:31:27.477Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -71,7 +72,7 @@
               "RelativeDocumentMoniker": "ParentalControlsUtils\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml.cs",
               "RelativeToolTip": "ParentalControlsUtils\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAgJmZmZnJvxsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T22:31:21.149Z",
               "EditorCaption": ""
