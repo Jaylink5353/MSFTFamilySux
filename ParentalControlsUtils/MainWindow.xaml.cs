@@ -25,9 +25,8 @@ namespace ParentalControlsUtils
         public MainWindow()
         {
             InitializeComponent();
-            IsServiceRunning();
+            FixText();
         }
-        
         public bool IsServiceRunning()
         {
             string serviceName = "WpcMonSvc";
@@ -59,6 +58,20 @@ namespace ParentalControlsUtils
                 MessageBox.Show($"An error has occured: {ex.Message}.");
                 return false;
             }
+        }
+        public void FixText()
+        {
+            var runningStat = IsServiceRunning();
+            string text;
+            if (runningStat == true)
+            {
+                text = $"Family Safety Service Status: Running";
+            }
+            else
+            {
+                text = $"Family Safety Service Status: Not Running";
+            }
+            servStat.Text = text;
         }
         private void Button_ClickP(object sender, RoutedEventArgs e)
         {
@@ -145,17 +158,7 @@ namespace ParentalControlsUtils
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //RefreshButton
-            var runningStat = IsServiceRunning();
-            string text;
-            if (runningStat == true)
-            {
-                text = $"Family Safety Service Status: Running";
-            }
-            else
-            {
-                text = $"Family Safety Service Status: Not Running";
-            }
-            servStat.Text = text;
+            FixText();
         }
     }
 }
