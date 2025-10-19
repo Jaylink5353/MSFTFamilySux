@@ -10,7 +10,7 @@ Go to the [Releases Tab](https://github.com/Jaylink5353/MSFTFamilySux/releases/l
 REQUIRES Admin Privileges!!
 
 ## Note about "15 Minutes Left" Messages
-If your organizer setup time limits, the "15 Minutes Left" and "2 Minutes Left" Messages may still appear. If the service is NOT running, it should not lock your PC. If it does, please create an issue here. These messages also may quickly pop-up after restarting the computer, this is normal.
+If your organizer has set up time limits, the "15 Minutes Left" and "2 Minutes Left" Messages may still appear. If the service is NOT running, it should not lock your PC. If it does, please create an issue here. These messages also may quickly pop-up after restarting the computer, this is normal.
 
 Project goals:
 - [x] Make Basic GUI Application that can stop the service or prevent it from launching. (v1.x)
