@@ -25,47 +25,54 @@ namespace ParentalControlsUtils
         public MainWindow()
         {
             InitializeComponent();
+            FixText();
         }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public bool IsServiceRunning()
         {
             string serviceName = "WpcMonSvc";
-            using (ServiceController service = new ServiceController(serviceName))
+            try
             {
-                if (service.Status == ServiceControllerStatus.Running)
+                using (ServiceController service = new ServiceController(serviceName))
                 {
-                    try
+                    if (service.Status == ServiceControllerStatus.Running)
                     {
-                        service.Stop();
-                        service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
-                        MessageBox.Show("Successfully Disabled!");
+                        Console.WriteLine($"Service '{serviceName}' is running.");
+                        return true;
                     }
-                    catch (System.ComponentModel.Win32Exception ex)
+                    else
                     {
-                        if (ex.Message.Contains("The pipe has been ended"))
-                        {
-                            // Optionally log or inform the user, but continue execution
-                            MessageBox.Show("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Service stop failed: {ex.Message}");
-                        }
+                        Console.WriteLine($"Service '{serviceName}' is NOT running. Status: {service.Status}");
+                        return false;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Service stop failed: {ex.Message}");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Service Not Running!");
                 }
             }
-            
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine($"Service '{serviceName}' not found.");
+                MessageBox.Show($"Service '{serviceName}' not found.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                MessageBox.Show($"An error has occurred: {ex.Message}.");
+                return false;
+            }
         }
-
+        public void FixText()
+        {
+            var runningStat = IsServiceRunning();
+            string text;
+            if (runningStat)
+            {
+                text = $"Family Safety Service Status: Running";
+            }
+            else
+            {
+                text = $"Family Safety Service Status: Not Running";
+            }
+            servStat.Text = text;
+        }
         private void Button_ClickP(object sender, RoutedEventArgs e)
         {
             // Change the service startup type to Disabled
@@ -148,5 +155,10 @@ namespace ParentalControlsUtils
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //RefreshButton
+            FixText();
+        }
     }
 }
