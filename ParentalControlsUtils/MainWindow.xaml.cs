@@ -60,7 +60,7 @@ namespace ParentalControlsUtils
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                MessageBox.Show($"An error has occured: {ex.Message}.");
+                MessageBox.Show($"An error has occurred: {ex.Message}.");
                 return false;
             }
         }
@@ -68,7 +68,7 @@ namespace ParentalControlsUtils
         {
             var runningStat = IsServiceRunning();
             string text;
-            if (runningStat == true)
+            if (runningStat)
             {
                 text = $"Family Safety Service Status: Running";
             }
