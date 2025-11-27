@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|c:\\users\\jaymes g\\documents\\parentalcontrolsutils\\parentalcontrolsutils\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\parentalcontrolsutils\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\parentalcontrolsutils\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\parentalcontrolsutils\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,50 +50,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ParentalControlsUtils\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml",
-              "RelativeToolTip": "ParentalControlsUtils\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-27T16:25:06.636Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\App.xaml.cs",
               "RelativeDocumentMoniker": "ParentalControlsUtils\\App.xaml.cs",
               "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\App.xaml.cs",
               "RelativeToolTip": "ParentalControlsUtils\\App.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAABsPR0AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAMDMzMzMrwB8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T16:23:56.565Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\App.xaml",
-              "RelativeDocumentMoniker": "ParentalControlsUtils\\App.xaml",
-              "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\App.xaml",
-              "RelativeToolTip": "ParentalControlsUtils\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-27T16:23:50.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ParentalControlsUtils\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ParentalControlsUtils\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgPRMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T17:09:37.896Z"
             }
           ]
         }
