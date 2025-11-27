@@ -54,6 +54,13 @@ namespace ParentalControlsUtils
                 Console.WriteLine("--status    Gets the status of the WpcMon service");
                 Console.WriteLine("--enable    Enables the WpcMon service, so Family Safety runs.");
                 Console.WriteLine("--disable   Disables the WpcMon service, so Family Safety doesn't run");
+            }
+            if (args.Contains("--quiet"))
+            {
+                return;
+            }
+            if (!args.Contains("--quiet"))
+            {
                 Console.WriteLine("[Enter] to continue");
                 var notUsed = Console.ReadLine();
             }
