@@ -13,5 +13,24 @@ namespace ParentalControlsUtils
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            if (e.Args.Length > 0)
+            {
+                cliMode(e.Args);
+                Shutdown();
+                return;
+            }
+
+            base.OnStartup(e);   
+        }
+        private void cliMode(string[] args)
+        {
+            //replace with logic from MainWindow.xaml.cs
+            if (args.Contains("--test"))
+            {
+                Console.WriteLine("Works!");
+            }       
+        }
     }
 }

@@ -1,5 +1,6 @@
 ParentalControlsUtils/bin/
 ParentalControlsUtils/obj/
-.vs/
+.vs/*
 ParentalControlsUtils/.vs/
 /GainAdmin
+
