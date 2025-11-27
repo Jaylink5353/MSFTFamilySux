@@ -30,13 +30,33 @@ namespace ParentalControlsUtils
         private void cliMode(string[] args)
         {
             AllocConsole();
-            //replace with logic from MainWindow.xaml.cs
             if (args.Contains("--test"))
             {
                 Console.WriteLine("Works!");
                 var test = Console.ReadLine();
-                
-            }       
+            }
+            if (args.Contains("--status"))
+            {
+
+            }
+            if (args.Contains("--enable"))
+            {
+
+            }
+            if (args.Contains("--disable"))
+            {
+
+            }
+            if (args.Contains("--help"))
+            {
+                Console.WriteLine("Possible Arguments:");
+                Console.WriteLine("--help      Prints this dialogue.");
+                Console.WriteLine("--status    Gets the status of the WpcMon service");
+                Console.WriteLine("--enable    Enables the WpcMon service, so Family Safety runs.");
+                Console.WriteLine("--disable   Disables the WpcMon service, so Family Safety doesn't run");
+                Console.WriteLine("[Enter] to continue");
+                var notUsed = Console.ReadLine();
+            }
         }
     }
 }
