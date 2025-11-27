@@ -29,7 +29,11 @@ namespace ParentalControlsUtils
         static extern bool AllocConsole();
         private void cliMode(string[] args)
         {
-            AllocConsole();
+
+            if (!args.Contains("--quiet"))
+            {
+                AllocConsole();
+            }
             if (args.Contains("--test"))
             {
                 Console.WriteLine("Works!");
@@ -54,16 +58,10 @@ namespace ParentalControlsUtils
                 Console.WriteLine("--status    Gets the status of the WpcMon service");
                 Console.WriteLine("--enable    Enables the WpcMon service, so Family Safety runs.");
                 Console.WriteLine("--disable   Disables the WpcMon service, so Family Safety doesn't run");
+                Console.WriteLine("--quiet     Doesn't init window, so you see no feedback");
             }
-            if (args.Contains("--quiet"))
-            {
-                return;
-            }
-            if (!args.Contains("--quiet"))
-            {
-                Console.WriteLine("[Enter] to continue");
-                var notUsed = Console.ReadLine();
-            }
+            Console.WriteLine("[Enter] to continue");
+            var notUsed = Console.ReadLine();
         }
     }
 }
