@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.ServiceProcess;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Runtime.InteropServices;
 
 
 namespace ParentalControlsUtils
@@ -27,6 +28,38 @@ namespace ParentalControlsUtils
         }
         [DllImport("kernel32.dll")]
         static extern bool AllocConsole();
+        public bool IsServiceRunning()
+        {
+            string serviceName = "WpcMonSvc";
+            try
+            {
+                using (ServiceController service = new ServiceController(serviceName))
+                {
+                    if (service.Status == ServiceControllerStatus.Running)
+                    {
+                        Console.WriteLine($"Service '{serviceName}' is running.");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Service '{serviceName}' is NOT running. Status: {service.Status}");
+                        return false;
+                    }
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine($"Service '{serviceName}' not found.");
+                MessageBox.Show($"Service '{serviceName}' not found.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                MessageBox.Show($"An error has occurred: {ex.Message}.");
+                return false;
+            }
+        }
         private void cliMode(string[] args)
         {
 
@@ -41,7 +74,7 @@ namespace ParentalControlsUtils
             }
             if (args.Contains("--status"))
             {
-
+                bool serviceStat = IsServiceRunning();
             }
             if (args.Contains("--enable"))
             {

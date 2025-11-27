@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|c:\\users\\jaymes g\\documents\\parentalcontrolsutils\\parentalcontrolsutils\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\parentalcontrolsutils\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A079A094-A2AD-4343-9578-88404551BC4A}|ParentalControlsUtils\\ParentalControlsUtils.csproj|solutionrelative:parentalcontrolsutils\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,9 +60,22 @@
               "RelativeDocumentMoniker": "ParentalControlsUtils\\App.xaml.cs",
               "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\App.xaml.cs",
               "RelativeToolTip": "ParentalControlsUtils\\App.xaml.cs",
-              "ViewState": "AgIAAC4AAABAZWZmZmYswD8AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAB1vUwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T16:23:56.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ParentalControlsUtils\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Jaymes G\\Documents\\ParentalControlsUtils\\ParentalControlsUtils\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ParentalControlsUtils\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T17:09:37.896Z",
               "EditorCaption": ""
             }
           ]
