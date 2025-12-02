@@ -1,4 +1,4 @@
-![App Icon](https://github.com/Jaylink5353/MSFTFamilySux/blob/main/ParentalControlsUtils/icon.png)
+![App Icon](https://github.com/Jaylink5353/MSFTFamilySux/blob/main/ParentalControlsUtils/NewIcon.png)
 # Microsoft Family Safety Bypasser!!
 
 For the ones who really need it.
@@ -31,4 +31,4 @@ Project goals:
 
 I am not responsible for any consequences related to using this program or any damage caused to the system!
 
-### Made by Jaylink5353
+### Made by Jaylink535
