@@ -111,7 +111,7 @@ namespace ParentalControlsUtils
                         }
                         else
                         {
-                            MessageBox.Show($"Service stop failed: {ex.Message}");
+                            MessageBox.Show($"Exception Occured: {ex.Message}. It may be stopped, check the stauts using the --status flag.");
                         }
                     }
                     catch (Exception ex)

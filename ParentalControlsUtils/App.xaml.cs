@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
 using System.Threading.Tasks;
@@ -50,19 +51,70 @@ namespace ParentalControlsUtils
             catch (InvalidOperationException)
             {
                 Console.WriteLine($"Service '{serviceName}' not found.");
-                MessageBox.Show($"Service '{serviceName}' not found.");
                 return false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                MessageBox.Show($"An error has occurred: {ex.Message}.");
                 return false;
             }
         }
+        private bool DisableSvc()
+        {
+            string serviceName = "WpcMonSvc";
+            using (ServiceController service = new ServiceController(serviceName))
+            {
+                if (service.Status == ServiceControllerStatus.Running)
+                {
+                    try
+                    {
+                        service.Stop();
+                        service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
+                        Console.WriteLine("Successfully Disabled!");
+                    }
+                    catch (System.ComponentModel.Win32Exception ex)
+                    {
+                        if (ex.Message.Contains("The pipe has been ended"))
+                        {
+                            // Optionally log or inform the user, but continue execution
+                            Console.WriteLine("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
+                            return false;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Service stop failed: {ex.Message}");
+                            return false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Service stop failed: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+            try
+            {
+                using (ManagementObject service = new ManagementObject($"Win32_Service.Name='{serviceName}'"))
+                {
+                    // 4 = Disabled, 3 = Manual, 2 = Automatic
+                    ManagementBaseObject inParams = service.GetMethodParameters("ChangeStartMode");
+                    inParams["StartMode"] = "Disabled";
+                    service.InvokeMethod("ChangeStartMode", inParams, null);
+                    Console.WriteLine("Service startup type set to Disabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to change startup type: {ex.Message}");
+                return true;
+            }
+            return false;
+        }
+
+
         private void cliMode(string[] args)
         {
-
             if (!args.Contains("--quiet"))
             {
                 AllocConsole();
@@ -82,7 +134,15 @@ namespace ParentalControlsUtils
             }
             if (args.Contains("--disable"))
             {
-
+                var err = DisableSvc();
+                if (err == false)
+                {
+                    Console.WriteLine("Service Disabled Sucessfully.");
+                }
+                if (err == true)
+                {
+                    Console.WriteLine("An Error Occurred.");
+                }
             }
             if (args.Contains("--help"))
             {
