@@ -79,13 +79,18 @@ namespace ParentalControlsUtils
                             // Optionally log or inform the user, but continue execution
                             Console.WriteLine(" 1 Service Stop"); //debug line, remove for release
                             Console.WriteLine("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
+                            return true;
+                        }
+                        if (ex.Message.Contains("Computer '.'"))
+                        {
+                            Console.WriteLine("Service Stopped, but check with --status.");
                             return false;
                         }
                         else
                         {
                             Console.WriteLine("2 Service Stop"); //debug line, remove for release
                             Console.WriteLine($"Service stop failed: {ex.Message}");
-                            return false;
+                            return true;
                         }
                     }
                     catch (Exception ex) //Removing this results in unhandeled exception
