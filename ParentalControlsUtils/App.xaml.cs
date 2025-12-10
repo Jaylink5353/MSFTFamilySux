@@ -121,6 +121,41 @@ namespace ParentalControlsUtils
             }
             return false;
         }
+        private bool enableSvc()
+        {
+            string serviceName = "WpcMonSvc";
+
+            try
+            {
+                using (ManagementObject service = new ManagementObject($"Win32_Service.Name='{serviceName}'"))
+                {
+                    // 4 = Disabled, 3 = Manual, 2 = Automatic
+                    ManagementBaseObject inParams = service.GetMethodParameters("ChangeStartMode");
+                    inParams["StartMode"] = "Manual";
+                    service.InvokeMethod("ChangeStartMode", inParams, null);
+                    Console.WriteLine("Service startup type set to Manual (Default).");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to change startup type: {ex.Message}");
+                return true;
+            }
+
+            using (ServiceController service = new ServiceController(serviceName))
+            {
+                // Check if the service is running
+                if (service.Status == ServiceControllerStatus.Stopped)
+                {
+                    // Stop the service
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
+                    Console.WriteLine("Sucessfully Enabled!");
+                   
+                }
+            }
+            return false;
+        }
 
 
         private void cliMode(string[] args)
@@ -140,7 +175,7 @@ namespace ParentalControlsUtils
             }
             if (args.Contains("--enable"))
             {
-
+                enableSvc();
             }
             if (args.Contains("--disable"))
             {
