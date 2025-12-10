@@ -77,7 +77,6 @@ namespace ParentalControlsUtils
                         if (ex.Message.Contains("The pipe has been ended"))
                         {
                             // Optionally log or inform the user, but continue execution
-                            Console.WriteLine(" 1 Service Stop"); //debug line, remove for release
                             Console.WriteLine("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
                             return true;
                         }
@@ -88,14 +87,12 @@ namespace ParentalControlsUtils
                         }
                         else
                         {
-                            Console.WriteLine("2 Service Stop"); //debug line, remove for release
                             Console.WriteLine($"Service stop failed: {ex.Message}");
                             return true;
                         }
                     }
                     catch (Exception ex) //Removing this results in unhandeled exception
                     {
-                        Console.WriteLine("3 Service Stop"); //debug line, remove for release
                         if (ex.Message.Contains("stop WpcMonSvc service on computer '.'"))
                         {
                             Console.WriteLine("Service may have stopped, please check with the --status arg.");
@@ -114,13 +111,11 @@ namespace ParentalControlsUtils
                     ManagementBaseObject inParams = service.GetMethodParameters("ChangeStartMode");
                     inParams["StartMode"] = "Disabled";
                     service.InvokeMethod("ChangeStartMode", inParams, null);
-                    Console.WriteLine("Service Type Change"); //debug line, remove for release
                     Console.WriteLine("Service startup type set to Disabled.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Service Type Change"); //debug line, remove for release
                 Console.WriteLine($"Failed to change startup type: {ex.Message}");
                 return true;
             }
