@@ -81,7 +81,7 @@ namespace ParentalControlsUtils
                             Console.WriteLine("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
                             return true;
                         }
-                        if (ex.Message.Contains("Computer '.'"))
+                        if (ex.Message.Contains("stop WpcMonSvc service on computer '.''"))
                         {
                             Console.WriteLine("Service Stopped, but check with --status.");
                             return false;
@@ -96,8 +96,13 @@ namespace ParentalControlsUtils
                     catch (Exception ex) //Removing this results in unhandeled exception
                     {
                         Console.WriteLine("3 Service Stop"); //debug line, remove for release
+                        if (ex.Message.Contains("stop WpcMonSvc service on computer '.'"))
+                        {
+                            Console.WriteLine("Service may have stopped, please check with the --status arg.");
+                            return false;
+                        }
                         Console.WriteLine($"Service stop failed: {ex.Message}");
-                        return false;
+                        return true;
                     }
                 }
             }
