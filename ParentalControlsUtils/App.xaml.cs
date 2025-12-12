@@ -153,8 +153,9 @@ namespace ParentalControlsUtils
                     Console.WriteLine("Sucessfully Enabled!");
                    
                 }
+                return false;
             }
-            return false;
+            
         }
 
 
@@ -171,7 +172,7 @@ namespace ParentalControlsUtils
             }
             if (args.Contains("--status"))
             {
-                bool serviceStat = IsServiceRunning();
+                IsServiceRunning();
             }
             if (args.Contains("--enable"))
             {
