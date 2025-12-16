@@ -38,7 +38,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>NewIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -121,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="NewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NewIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
