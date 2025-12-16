@@ -23,9 +23,9 @@ REQUIRES Admin Privileges!! (new tool coming soon)
 If your organizer has set up time limits, the "15 Minutes Left" and "2 Minutes Left" Messages may still appear. If the service is NOT running, it should not lock your PC. If it does, please create an issue here. These messages also may quickly pop-up after restarting the computer, this is normal.
 
 Project goals:
-- [x] Make Basic GUI Application that can stop the service or prevent it from launching. (v1.x)
+- [x] Make Basic GUI Application that can stop the service or prevent it from launching. (v1.0)
+- [x] Make a CLI Version or let the program pass with arguments. (v1.2)
 - [ ] Make a tool to help you get admin privileges (make new account or convert existing).
-- [x] Make a CLI Version or let the program pass with arguments.
 
 ## DISCLAIMER!
 
