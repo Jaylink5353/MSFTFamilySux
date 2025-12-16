@@ -80,7 +80,7 @@ namespace ParentalControlsUtils
                             Console.WriteLine("Service stopped, but you may want to verify it actually stopped. Open Services and find 'Parental Controls', and under 'Status', make sure there is nothing.");
                             return true;
                         }
-                        if (ex.Message.Contains("stop WpcMonSvc service on computer '.''"))
+                        if (ex.Message.Contains("stop WpcMonSvc service on computer '.'"))
                         {
                             Console.WriteLine("Service Stopped, but check with --status.");
                             return false;
@@ -164,11 +164,6 @@ namespace ParentalControlsUtils
             if (!args.Contains("--quiet"))
             {
                 AllocConsole();
-            }
-            if (args.Contains("--test"))
-            {
-                Console.WriteLine("Works!");
-                var test = Console.ReadLine();
             }
             if (args.Contains("--status"))
             {
