@@ -194,7 +194,12 @@ namespace ParentalControlsUtils
                 Console.WriteLine("--disable   Disables the WpcMon service, so Family Safety doesn't run");
                 Console.WriteLine("--quiet     Doesn't init window, so you see no feedback");
             }
-            Console.WriteLine("[Enter] to continue");
+            else
+            {
+                Console.WriteLine("Argument Unknown. Please Provide a valid argument. Use --help to get a list of arguments.");
+
+            }
+                Console.WriteLine("[Enter] to continue");
             var notUsed = Console.ReadLine();
         }
     }
