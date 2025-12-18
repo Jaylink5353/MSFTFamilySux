@@ -178,7 +178,7 @@ namespace ParentalControlsUtils
                 var err = DisableSvc();
                 if (err == false)
                 {
-                    Console.WriteLine("Service Disabled Sucessfully.");
+                    Console.WriteLine("Service Disabled Successfully.");
                 }
                 if (err == true)
                 {
